@@ -1,0 +1,15 @@
+[package]
+name = "catr"
+version = "0.1.0"
+edition = "2021"
+description = "A clone of cat written in Rust that concatenate FILE(s) to standard output."
+
+[dependencies]
+anyhow = "1.0.89"
+clap = { version = "4.5.17", features = ["derive"] }
+
+[dev-dependencies]
+assert_cmd = "2.0.16"
+predicates = "3.1.2"
+pretty_assertions = "1.4.1"
+rand = "0.8.5"
