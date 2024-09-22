@@ -1,0 +1,15 @@
+[package]
+name = "wcr"
+version = "0.1.0"
+edition = "2021"
+description = "A clone of wc written in Rust that prints the number of lines, words and bytes in each FILE(s)."
+
+[dependencies]
+anyhow = "1.0.89"
+clap = { version = "4.5.18", features = ["derive"] }
+
+[dev-dependencies]
+assert_cmd = "2.0.16"
+predicates = "3.1.2"
+pretty_assertions = "1.4.1"
+rand = "0.8.5"
