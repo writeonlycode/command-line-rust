@@ -1,0 +1,16 @@
+[package]
+name = "uniqr"
+version = "0.1.0"
+edition = "2021"
+description = "Filter adjacent matching lines from INPUT (or standard input), writing to OUTPUT (or standard output)."
+
+[dependencies]
+anyhow = "1.0.89"
+clap = { version = "4.5.18", features = ["derive"] }
+
+[dev-dependencies]
+assert_cmd = "2.0.16"
+predicates = "3.1.2"
+pretty_assertions = "1.4.1"
+rand = "0.8.5"
+tempfile = "3.12.0"
