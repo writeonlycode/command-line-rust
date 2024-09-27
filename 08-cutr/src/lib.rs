@@ -1,11 +1,10 @@
 use anyhow::Result;
+use clap::Parser;
 use std::{
     fs::File,
     io::{self, BufRead, BufReader},
     ops::Range,
 };
-
-use clap::{Arg, Parser};
 
 pub fn run(config: Config) -> anyhow::Result<()> {
     for file in config.files {
@@ -51,7 +50,7 @@ fn print_bytes_in_range(s: String, ranges: &Vec<Range<usize>>) -> Result<()> {
         print!("{}", String::from_utf8_lossy(value.as_slice()));
     }
 
-    print!("\n");
+    println!();
     Ok(())
 }
 
@@ -62,10 +61,10 @@ fn print_chars_in_range(s: String, ranges: &Vec<Range<usize>>) -> Result<()> {
             .skip(range.start - 1)
             .take(range.end - range.start + 1)
             .collect();
-        print!("{}", value.to_string());
+        print!("{}", value);
     }
 
-    print!("\n");
+    println!();
     Ok(())
 }
 
@@ -79,7 +78,7 @@ fn print_fields_in_range(s: String, ranges: &Vec<Range<usize>>, delim: char) -> 
         print!("{}", value.to_string().trim_end_matches(delim));
     }
 
-    print!("\n");
+    println!();
     Ok(())
 }
 
